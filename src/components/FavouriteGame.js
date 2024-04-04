@@ -31,11 +31,11 @@ function FavouriteGame() {
 
     return (
         <div className="game-details">
-            <h1>My Top Games</h1>
+            <h2>My Top Games</h2>
             {gameDetails && gameDetails.map((game, index) => (
-                <div gamekey={index}>
+                <div className='top-games' gamekey={index}>
                     <img src={game.background_image} alt={game.name} />
-                    <h2>{game.name}</h2>
+                    <h3>{game.name}</h3>
                     <p>Release Date: {game.released}</p>
                     <p>Rating: {game.rating}/5</p>
                 </div>

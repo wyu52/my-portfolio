@@ -32,12 +32,12 @@ function Projects() {
             <section className="project-details">
                 
                 <h2>Process</h2>
-                <p>My group consisted of three people: me, Alen Villaluz, and Dale Zheng. We decided to go with Dale's design since it was cleanest design. To favourite movies, we made a button component that, when clicked, adds or removes a movie from the list. This is achieved by storing a list of favourite movies in state and when the user clicks the star button, it checks if the movie is already in the list of favourites.  </p>
+                <p>I first looked at past intakes' portfolio to get an idea of what kind of site I want to design. At the beginning I was thinking of doing a clean, minimalistic design, but instead went with a Cyberpunk aesthetic. One of the highlights of the project is fetching data using an API from RAWG API. I fetched the data from the API using the built-in React hook useEffect. Fetching the actual game data, I made an HTTP GET request to the RAWG API endpoint. </p>
 
-                <a className="single-page-button" href="https://github.com/jasperalen07/movie-squirrel/blob/main/src/components/FavoriteFunction.js">View Code</a>
+                <a className="single-page-button" href="https://github.com/wyu52/my-portfolio/blob/main/src/components/FavouriteGame.js">View Code</a>
 
                 <h2>Reflection</h2>
-                <p>Since this was my first React group project I learned many skills. Progressing through the project helped me practice with styling with SASS, implementing a carousel, and use React hooks. My team mates were easy to work with and everyone completed their tasks on time.</p>
+                <p>As this was my second major React project, I was more familiar with React which made the process easier while also learning new techniques. I learned how to use the GSAP plugin to create animations and had more practice with APIs. Overall, I'm satisfied with the work I've done on this project and hope to learn more.</p>
              
             </section>
 
