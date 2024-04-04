@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import HomePage from './pages/homepage';
+import Projects from './pages/projects';
+import MovieSquirrel from './pages/moviesquirrel';
+import Capstone from './pages/capstone';
+import Portfolio from './pages/portfolio';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/pages/projects" element={<Projects />}></Route>
+        <Route path="/pages/moviesquirrel" element={<MovieSquirrel />}></Route>
+        <Route path="/pages/capstone" element={<Capstone />}></Route>
+        <Route path="/pages/portfolio" element={<Portfolio />}></Route>
+
+      </Routes>
+      </Router>
+  )
 }
 
 export default App;

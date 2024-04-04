@@ -1,38 +1,481 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 1rem;
+  max-width: 80%;
+  background-image: url(images/background.svg);
+  background-size: cover;
+  background-color: #041348;
+  color: white;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img {
+  width: 75%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+li {
+  list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+svg {
+  fill: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.social-icons {
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.portrait {
+  width: 100%;
+}
+
+.logo {
+  width: 20%;
+}
+
+.arrow {
+  width: 10%;
+}
+
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url(images/navbackground.svg);
+  background-repeat: no-repeat;
+  background-size: 130%;
+  background-position: center 1.5rem;
+  padding: 1rem;
+  z-index: 999;
+}
+
+.main-nav-button {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.main-nav-button a:hover svg{
+  fill:#041348;
+}
+
+.all-projects {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.arrowright {
+  margin-left: 2rem;
+}
+
+.all-projects a{
+  font-size: 2rem;
+}
+
+.welcome-section {
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  
+}
+
+.welcome-section h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-section .intro {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.welcome-section img.portrait {
+  width: 100%;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+.welcome-section p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.social-icons {
+  position: fixed; 
+  bottom: 6rem; 
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo {
+  padding: 1rem;
+  width: 60%;
+}
+
+.featured-project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.arrowdown {
+  width: 150px;
+  height: auto;
+  margin-top: 3rem;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30rem;
+  margin-bottom: 10rem;
+}
+
+.intro p {
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.projects-container {
+  gap: 2rem;
+  margin-bottom: 10rem;
+}
+
+.projects-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 5rem;
+  border: 3px solid #1AFE49;
+}
+
+.other-projects-section img{
+  border: 3px solid #1AFE49;
+}
+
+.other-projects-section {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.other-projects h2 {
+  text-align: center;
+}
+
+.other-projects {
+  margin-bottom: 8rem;
+}
+
+.capstone {
+  grid-column: 1 / span 4;
+  grid-row: 2;
+  position: relative;
+}
+
+.project-caption {
+  position: absolute;
+  bottom: 1rem;
+  left: -1rem;
+  background-image: url(images/navbackground2.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem;
+  font-size: 0.8rem;
+}
+
+.project-single-section h1 {
+  text-align: center;
+}
+
+.project-single-section li {
+  margin-top: 1rem;
+}
+.project-single-section a {
+  margin: 0.5rem;
+  background-color: #40F4FF;
+  color: black;
+  padding: 0.5rem;
+}
+
+.project-single-section img {
+  border: 3px solid #1AFE49;
+}
+
+.project-single-img {
+  display:flex;
+  justify-content: center;
+}
+
+.project-details {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.portfolio {
+  grid-column: 4 / span 1;
+  grid-row: 1;
+  position: relative;
+  width: 100%;
+}
+
+.movie-db {
+  grid-column: 1 / span 3;
+  grid-row: 1;
+  position: relative;
+}
+
+
+
+.my-toolkit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(images/navbackground2.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 10rem;
+  margin-top: 10rem;
+}
+
+.toolkit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toolkit ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  padding: 0;
+  padding-bottom: 9rem;
+}
+
+.toolkit li{
+  margin: 0.5rem;
+  background-color: #40F4FF;
+  color: black;
+  padding: 0.5rem;
+}
+
+.single-page-button {
+  margin: 0.5rem;
+  background-color: #40F4FF;
+  color: black;
+  padding: 0.5rem;
+}
+
+.single-page-button:visited {
+  color: black;
+}
+
+.filter-buttons {
+  margin-bottom: 1rem;
+}
+
+.filter-buttons button {
+  display: flex;
+  background-color: #8386F5;
+  border: none;
+  color: black;
+  padding: 0.5rem 1.5rem;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: "Share Tech Mono", monospace;
+  font-weight: 600;
+}
+
+.filter-buttons button.selected,
+.filter-buttons button:hover {
+  background-color: #40F4FF;
+}
+
+.contact-me {
+  margin-bottom: 15rem;
+  margin-top: 5rem;
+  border: 3px solid #083E12;
+  background-color: #1AFE49;
+  color: black;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.contact-me:visited {
+  color: black;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.home-capstone {
+  position: relative;
+}
+
+.home-capstone img {
+  border: 3px solid #1AFE49;
+}
+
+#featured-project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#arrowup {
+  position: fixed;
+  bottom: 8rem;
+  right: 3rem;
+  width: 15%;
+  height: auto; 
+}
+
+@media (min-width: 48em) {
+  body {
+    font-size: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .social-icon-svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  .arrowright {
+    width: 150%;
+  }
+
+  .my-toolkit {
+    font-size: 1.5rem;
+    width: 100%;
+    height: auto;
+  }
+
+  .my-toolkit ul {
+  padding-bottom: 0;
+  }
+
+  .filter-buttons button {
+    font-size: 1.5rem;
+    display: inline;
+  }
+
+  .welcome-section h1 {
+    font-size: 6rem;
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .intro p{
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .portrait {
+    margin-right: 2rem;
+    width: 50%;
+    border: 3px solid #1AFE49;
+  }
+
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 15rem;
+  }
+  
+  .projects-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .capstone {
+    grid-column: 1 / span 4;
+    grid-row: 2;
+    position: relative;
+  }
+
+  .other-projects-section {
+    flex-direction: row;
+  }
+  
+  .project-caption {
+    font-size: 1.5rem;
+  }
+  
+  .portfolio {
+    grid-column: 4 / span 1;
+    grid-row: 1;
+    position: relative;
+  }
+  
+  .movie-db {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    position: relative;
+  }
+  
+  #arrowup {
+    width: 5%;
+  }
+}
+
+@media (min-width: 64em) {
+  body {
+    max-width: 70%;
+    
+  }
+}
+
+@media (min-width: 90em) {
+  .capstone img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
