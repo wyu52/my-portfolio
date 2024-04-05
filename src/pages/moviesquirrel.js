@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import movieProject from "../images/movie-squirral.JPG";
 import portfolio from "../images/portfolio.JPG";
-import capstone from "../images/capstone.JPG";
+import capstone from "../images/capstone.png";
 import { Link } from "react-router-dom";
 
 function Projects() {

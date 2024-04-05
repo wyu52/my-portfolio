@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import movieProject from "../images/movie-squirral.JPG";
 import portfolio from "../images/portfolio.JPG";
 import Footer from "../components/Footer";
-import capstone from "../images/capstone.JPG";
+import capstone from "../images/capstone.png";
 import { Link } from "react-router-dom";
 
 function Projects() {
@@ -34,12 +34,12 @@ function Projects() {
             <section className="project-details">
                 
                 <h2>Process</h2>
-                <p>We started the process by getting ideas of other bubble tea stores' website's design and noting down any interesting components. In the end, we decided to go for a clean rounded design corresponding to our bubble tea store's name, BubbleLab.</p>
+                <p>We started the process by getting ideas of other bubble tea stores' website's design and noting down any interesting components. In the end, we decided to go for a clean rounded design corresponding to our bubble tea store's name, BubbleLab. Instead of making a separate single product page, we used a wp plugin called Quickview to purchase Bubble tea and additional options.</p>
 
-                <a className="single-page-button" href="https://github.com/jasperalen07/movie-squirrel/blob/main/src/components/FavoriteFunction.js" >View Code</a>
+                <a className="single-page-button" href="https://xyzbubbletea.bcitwebdeveloper.ca/shop/" >View Website</a>
 
                 <h2>Reflection</h2>
-                <p>Since this was my first React group project I learned many skills. Progressing through the project helped me practice with styling with SASS, implementing a carousel, and use React hooks. My team mates were easy to work with and everyone completed their tasks on time.</p>
+                <p>This was my first project that simulates a real website to build for a cilent. I learned that there are many tasks to take into account. I also know how crucial team work is to build a fully functional website. My team mates and I coordinated and communicated well so that we could finish the website.</p>
              
             </section>
 

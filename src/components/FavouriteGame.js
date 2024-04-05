@@ -32,14 +32,16 @@ function FavouriteGame() {
     return (
         <div className="game-details">
             <h2>My Top Games</h2>
+            <div className='top-games-container'>
             {gameDetails && gameDetails.map((game, index) => (
-                <div className='top-games' gamekey={index}>
-                    <img src={game.background_image} alt={game.name} />
-                    <h3>{game.name}</h3>
-                    <p>Release Date: {game.released}</p>
-                    <p>Rating: {game.rating}/5</p>
-                </div>
+                    <div className='top-games' gamekey={index}>
+                        <img src={game.background_image} alt={game.name} />
+                        <h3>{game.name}</h3>
+                        <p>Release Date: {game.released}</p>
+                        <p>Rating: {game.rating}/5</p>
+                    </div>
             ))}
+            </div>
         </div>
     );
     };
