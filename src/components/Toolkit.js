@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import gsap from "gsap";
+import { useEffect } from "react";
 
 const Toolkit = () => {
     const skills = [
@@ -13,37 +15,57 @@ const Toolkit = () => {
         { name: 'Adobe Figma', category: 'Design' }, 
         { name: 'Adobe XD', category: 'Design' }, 
         { name: 'Photoshop', category: 'Design' },
-      ];
+    ];
 
-      const [selectedCategory, setSelectedCategory] = useState('All');
+    const [selectedCategory, setSelectedCategory] = useState('All');
+    const skillsRef = useRef(null);
 
-      const filteredSkills = selectedCategory === 'All' ? skills : skills.filter(skill => skill.category === selectedCategory);
+    useEffect(() => {
+        if (skillsRef.current) {
+            gsap.fromTo(skillsRef.current.children, {
+                opacity: 0,
+                y: 20,
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+                stagger: 0.1,
+                ease: 'power3.out'
+            });
+        }
+    }, [selectedCategory]);
+
+    const handleFilterClick = (category) => {
+        setSelectedCategory(category);
+    };
+
+    const filteredSkills = selectedCategory === 'All' ? skills : skills.filter(skill => skill.category === selectedCategory);
 
     return (
         <div className='toolkit'>
             <div className='filter-buttons'>
-            <button 
+                <button 
                     className={selectedCategory === 'All' ? 'selected' : ''}
-                    onClick={() => setSelectedCategory('All')}
+                    onClick={() => handleFilterClick('All')}
                 >
                     All
                 </button>
                 <button 
                     className={selectedCategory === 'Development' ? 'selected' : ''}
-                    onClick={() => setSelectedCategory('Development')}
+                    onClick={() => handleFilterClick('Development')}
                 >
                     Development
                 </button>
                 <button 
                     className={selectedCategory === 'Design' ? 'selected' : ''}
-                    onClick={() => setSelectedCategory('Design')}
+                    onClick={() => handleFilterClick('Design')}
                 >
                     Design
                 </button>
             </div>
-            <ul>
+            <ul ref={skillsRef}>
                 {filteredSkills.map((skill, index) => (
-                    <li key={index}>{skill.name}</li>
+                    <li key={index} className='skill'>{skill.name}</li>
                 ))}
             </ul>
         </div>

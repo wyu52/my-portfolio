@@ -1,12 +1,46 @@
 
 import Header from "../components/Header";
 import movieProject from "../images/movie-squirral.JPG";
-import portfolio from "../images/portfolio.JPG";
+import portfolio from "../images/portfolio.png";
 import Footer from "../components/Footer";
 import capstone from "../images/capstone.png";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
+import { useEffect } from "react";
 
 function Projects() {
+    useEffect(() => {
+        
+
+        const animateElements = () => {
+            gsap.to('.single-page-button', {
+                borderColor: '#FF00FF',
+                duration: 1,
+                repeat: -1,
+                yoyo: true,
+                ease: 'power1.inOut',
+            });
+
+            
+        };
+
+        const smoothScroll = () => {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    gsap.to(window, { duration: 0.8, scrollTo: { y: this.getAttribute('href'), offsetY: 70 } });
+                });
+            });
+        };
+
+        
+        smoothScroll();
+
+        animateElements();
+
+      
+    }, []);
 
     return (
         <main>

@@ -30,7 +30,7 @@ function FavouriteGame() {
     }, []);
 
     return (
-        <div className="game-details">
+        <section className="game-details">
             <h2>My Top Games</h2>
             <div className='top-games-container'>
             {gameDetails && gameDetails.map((game, index) => (
@@ -42,7 +42,7 @@ function FavouriteGame() {
                     </div>
             ))}
             </div>
-        </div>
+        </section>
     );
     };
 

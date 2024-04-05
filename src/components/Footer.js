@@ -6,22 +6,29 @@ function Footer() {
     const currentYear = new Date().getFullYear();
 
     useEffect(() => {
-        const smoothScroll = () => {
-            const links = document.querySelectorAll('a[href^="#"]');
-            links.forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    gsap.to(window, {duration: 0.8, scrollTo: {y: this.getAttribute('href'), offsetY: 70}});
-                });
-            });
+        gsap.set("#arrowup", { opacity: 0 }); // Initially hide the arrow
+    
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            const halfWindowHeight = window.innerHeight / 2;
+    
+            if (scrollY > halfWindowHeight) {
+                gsap.to("#arrowup", { opacity: 1, duration: 0.3 }); // Show the arrow
+            } else {
+                gsap.to("#arrowup", { opacity: 0, duration: 0.3 }); // Hide the arrow
+            }
         };
-
-        smoothScroll();
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     return(
         <footer>
-            <a href="#header"><img className="arrow" id="arrowup" src={arrowup} alt="Up arrow"/></a>
+            <a href="#header" ><img className="arrow" id="arrowup" src={arrowup} alt="Up arrow"/></a>
 
             <div className="social-icons">
 

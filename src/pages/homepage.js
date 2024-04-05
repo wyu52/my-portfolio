@@ -3,9 +3,9 @@
 import ScrollToPlugin from "gsap/ScrollToPlugin";
 import Header from "../components/Header";
 import WelcomeSection from "../components/WelcomeSection";
-import imageSrc from "../images/portfolio-picture.jpg";
+import Portrait from "../images/portfolio-picture1.png";
 import Toolkit from "../components/Toolkit";
-import capstone from "../images/capstone.JPG";
+import capstone from "../images/capstone.png";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import arrowright from "../images/arrowright.svg";
@@ -25,14 +25,43 @@ function HomePage() {
             links.forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    gsap.to(window, {duration: 0.8, scrollTo: {y: this.getAttribute('href'), offsetY: 70}});
+                    gsap.to(window, { duration: 0.8, scrollTo: { y: this.getAttribute('href'), offsetY: 70 } });
                 });
             });
         };
 
+        const animateElements = () => {
+            gsap.to('.portrait, .contact-me, .single-page-button', {
+                borderColor: '#FF00FF',
+                duration: 1,
+                repeat: -1,
+                yoyo: true,
+                ease: 'power1.inOut',
+            });
+
+            gsap.to('.arrowright', {
+                x: 50,
+                duration: 1,
+                repeat: -1,
+                yoyo: true,
+                ease: 'power1.inOut',
+            });
+
+            gsap.to('.arrowdown', {
+                y: 100,
+                duration: 1,
+                repeat: -1,
+                yoyo: true,
+                ease: 'power1.inOut',
+            });
+
+            
+        };
+
+        animateElements();
+
         smoothScroll();
     }, []);
-    
 
     return (
         <main>
@@ -48,7 +77,7 @@ function HomePage() {
 
             <section className="intro">
 
-                <img className="portrait" id="portrait" src={imageSrc} alt="Portrait" />
+                <img className="portrait" id="portrait" src={Portrait} alt="Portrait" />
                 <p>I’m a front-end web developer with an automotive background. I've always wanted to try coding since I love building things and fixing problems. It feels awesome to build something and seeing it in action!
 
                 In my free time, I'm into gaming, working out, and building computers.</p>

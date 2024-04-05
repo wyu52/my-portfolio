@@ -1,11 +1,29 @@
 import Header from "../components/Header";
 import movieProject from "../images/movie-squirral.JPG";
-import portfolio from "../images/portfolio-mobile.JPG";
-import capstone from "../images/capstone.JPG";
+import portfolio from "../images/portfolio-mobile.png";
+import capstone from "../images/capstone.png";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import gsap from "gsap";
+import { useEffect } from "react";
 
 function Projects() {
+    useEffect(() => {
+
+        const smoothScroll = () => {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    gsap.to(window, { duration: 0.8, scrollTo: { y: this.getAttribute('href'), offsetY: 70 } });
+                });
+            });
+        };
+
+        
+        smoothScroll();
+
+    }, []);
 
     return (
         <main>
