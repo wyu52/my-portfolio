@@ -8,6 +8,7 @@ body {
   background-image: url(images/background.svg);
   background-size: cover;
   background-color: #041348;
+  background-position: -30rem;
   color: white;
   margin: 0 auto;
 }
@@ -35,7 +36,7 @@ a:visited {
 
 .social-icons {
   color: white;
-  
+
 }
 
 .portrait {
@@ -402,11 +403,13 @@ a:visited {
 @media (min-width: 48em) {
   body {
     font-size: 1.5rem;
+    background-image: -10rem;
   }
 
   .game-details {
-    text-align: center; /* Center align h2 */
-}
+    text-align: center;
+    /* Center align h2 */
+  }
 
   .social-icon-svg {
     width: 50px;
